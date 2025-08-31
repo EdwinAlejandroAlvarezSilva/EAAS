@@ -1,0 +1,290 @@
+/* Barra de progreso de audio personalizada */
+#audioProgress {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, #3a3a3a 60%, #bbb 100%);
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 6px #0001;
+  transition: box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+}
+#audioProgress:focus {
+  box-shadow: 0 0 0 2px #2223;
+}
+#audioProgress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-top: -4.5px; /* Centrado vertical exacto */
+  border-radius: 50%;
+  background: #000;
+  box-shadow: 0 2px 8px #2224;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#audioProgress:active::-webkit-slider-thumb {
+  background: #444;
+}
+#audioProgress::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #000;
+  box-shadow: 0 2px 8px #2224;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#audioProgress:active::-moz-range-thumb {
+  background: #444;
+}
+#audioProgress::-ms-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #000;
+  box-shadow: 0 2px 8px #2224;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#audioProgress:active::-ms-thumb {
+  background: #444;
+}
+#audioProgress::-webkit-slider-runnable-track {
+  height: 7px;
+  border-radius: 5px;
+  background: transparent;
+}
+#audioProgress::-ms-fill-lower {
+  background: #000;
+  border-radius: 5px;
+}
+#audioProgress::-ms-fill-upper {
+  background: #bbb;
+  border-radius: 5px;
+}
+/* Animación para los botones de audio */
+button#audio-anim, button#audio-anim:focus {
+  outline: none;
+}
+button#audio-anim svg {
+  transition: transform 0.15s cubic-bezier(.4,2,.3,1), box-shadow 0.15s;
+}
+button:active svg, button.audio-anim-active svg {
+  transform: scale(1.18);
+  box-shadow: 0 0 8px #22222244;
+}
+/* Botones de audio específicos */
+#playBtn, #pauseBtn {
+  padding: 0;
+  border-radius: 50%;
+}
+.footer-derechos {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  color: #000000;
+  font-size: 15px;
+  background: #f0f0f0;
+  z-index: 100;
+}
+.footer-derechos {
+  text-align: center;
+  padding: 20px 0;
+  color: #000000;
+  font-size: 15px;
+  background: #bbbbbb;
+  margin-top: 40px;
+}
+.menu-header .menu-link:last-of-type {
+  margin-right: 20px;
+}
+.menu-sep {
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0 8px;
+  user-select: none;
+}
+
+@font-face {
+  font-family: 'Fuente 3';
+  src: url('../fonts/Fuente 3.woff2') format('woff2');
+}
+.menu-link, .submenu-link {
+  font-family: 'Fuente 3', sans-serif;
+}
+.acceso-rapido {
+  position: relative;
+  cursor: pointer;
+  margin-right: 0 !important;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #222;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  min-width: 120px;
+  z-index: 10;
+}
+
+.acceso-rapido:hover .submenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.submenu-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  font-size: 15px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.submenu-link:hover {
+  background: #444;
+}
+/* Menú y buscador en el header */
+.menu-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+}
+
+.buscador-header {
+  padding: 4px 12px;
+  border-radius: 16px;
+  border: none;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.menu-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.menu-link:hover {
+  background: #222;
+}
+header .logo-header {
+  height: 32px;
+  width: auto;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+header h1 {
+  font-size: 20px;
+  margin-left: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* Franja ploma para los íconos de redes sociales */
+.franja-redes {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+}
+
+.redes-sociales {
+  position: relative;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: flex-end;
+  align-items: center;
+  height: 1%;
+  z-index: 1002;
+}
+
+header {
+  background-color: #000000;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+  margin-top: 5px;
+}
+header {
+  background-color: #000000;
+  color: #fff;
+  padding: 5px;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 40px;
+}
+/* Tipografía personalizada */
+@font-face {
+  font-family: 'Fuente1';
+  src: url('../fonts/fuente1.woff2') format('woff2');
+}
+
+body {
+  font-family: 'Fuente1', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #3a3a3a;
+}
+
+header {
+  background-color: #000000;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+}
+
+main {
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Íconos de redes sociales */
+.redes-sociales {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.redes-sociales a svg {
+  width: 18px;
+  height: 18px;
+}
+
+.redes-sociales a svg path {
+  fill: #bebebe;
+  transition: fill 0.3s ease;
+}
+
+.redes-sociales a:hover svg path {
+  fill: #000000;
+}

@@ -1,3 +1,17 @@
+// Animación de entrada con logo
+window.addEventListener('DOMContentLoaded', function() {
+	var logoAnim = document.getElementById('logo-anim');
+	var logoImg = document.getElementById('logo-anim-img');
+	if (logoAnim && logoImg) {
+		setTimeout(function() {
+			logoAnim.style.opacity = '0';
+			logoAnim.style.visibility = 'hidden';
+		}, 2400);
+		setTimeout(function() {
+			logoAnim.style.display = 'none';
+		}, 3000);
+	}
+});
 // Reproducir y pausar audio
 document.addEventListener('DOMContentLoaded', function() {
 	var audio = document.getElementById('audioPlayer');

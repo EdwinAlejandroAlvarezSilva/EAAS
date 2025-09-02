@@ -1,3 +1,18 @@
+/* Animación de entrada del logo */
+#logo-anim {
+  animation: fadeOutLogo 1.2s 1.2s forwards;
+}
+#logo-anim-img {
+  animation: logoIn 1.2s cubic-bezier(.4,2,.3,1) forwards;
+}
+@keyframes logoIn {
+  0% { opacity: 0; transform: scale(0.7); }
+  60% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes fadeOutLogo {
+  to { opacity: 0; visibility: hidden; }
+}
 /* Barra de progreso de audio personalizada */
 #audioProgress {
   -webkit-appearance: none;
@@ -165,11 +180,19 @@ button:active svg, button.audio-anim-active svg {
 }
 
 .buscador-header {
-  padding: 4px 12px;
-  border-radius: 16px;
-  border: none;
+  padding: 6px 12px 6px 32px;
+  border-radius: 18px;
+  border: 1.5px solid #bbb;
   font-size: 16px;
   margin-right: 8px;
+  background: #fff;
+  box-shadow: 0 2px 8px #0001;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.buscador-header:focus {
+  border: 1.5px solid #222;
+  box-shadow: 0 2px 12px #2222;
+  outline: none;
 }
 
 .menu-link {
@@ -199,25 +222,24 @@ header h1 {
 .franja-redes {
   position: fixed;
   top: 0;
-  right: 0;
-  width: 100%;
+  left: 0;
+  width: 100vw;
   background-color: #f0f0f0;
   height: 40px;
   display: flex;
   align-items: center;
-  z-index: 1001;
+  justify-content: center;
+  z-index: 1003;
 }
 
 .redes-sociales {
   position: relative;
-  right: 20px;
   display: flex;
   flex-direction: row;
   gap: 12px;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  height: 1%;
-  z-index: 1002;
+  z-index: 1004;
 }
 
 header {
@@ -230,12 +252,17 @@ header {
 header {
   background-color: #000000;
   color: #fff;
-  padding: 5px;
-  margin-top: 40px;
+  padding: 5px 0;
+  position: fixed;
+  top: 40px;
+  left: 0;
+  width: 100vw;
+  z-index: 1002;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  height: 40px;
+  justify-content: center;
+  height: 56px;
+  box-shadow: 0 2px 8px #0002;
 }
 /* Tipografía personalizada */
 @font-face {
@@ -262,6 +289,7 @@ main {
   padding: 40px;
   max-width: 800px;
   margin: auto;
+  margin-top: 110px; /* Espacio para header y franja de redes */
 }
 
 /* Íconos de redes sociales */
